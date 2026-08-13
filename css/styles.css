@@ -210,6 +210,52 @@ ul {
   width: auto;
 }
 
+/* Horizontal text wordmark for nav */
+.logo-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  line-height: 1;
+}
+.logo-wordmark .logo-monogram {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.logo-wordmark .logo-monogram .mono-h { color: var(--cream); }
+.logo-wordmark .logo-monogram .mono-r { color: var(--gold); }
+.logo-wordmark .logo-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(201,162,75,0.4);
+}
+.logo-wordmark .logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.logo-wordmark .logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-variant-caps: small-caps;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  line-height: 1;
+}
+.logo-wordmark .logo-tagline {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
+  line-height: 1;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -232,6 +278,63 @@ ul {
 
 .main-nav .btn-gold {
   color: var(--navy);
+}
+
+/* Services dropdown */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-top: 1px;
+  transition: transform 0.2s;
+}
+.nav-dropdown:hover > a::after,
+.nav-dropdown:focus-within > a::after {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  border: 1px solid rgba(201,162,75,0.3);
+  border-top: 2px solid var(--gold);
+  min-width: 260px;
+  z-index: 200;
+  padding: 0.5rem 0;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.dropdown-menu a:hover {
+  background: rgba(201,162,75,0.08);
+  color: var(--gold);
 }
 
 /* ============================================================
