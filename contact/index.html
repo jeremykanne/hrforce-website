@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — HR Force NY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo-link">
+      <img src="/brand/hrforce-ny-logo-2a.png" alt="HR Force NY" height="48">
+    </a>
+    <nav class="main-nav">
+      <a href="/services/">Services</a>
+      <a href="/who-we-serve/">Who We Serve</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" class="btn-gold">Talk to Raul</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="section-navy page-header">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Start with a Conversation, Not a Form Letter</h1>
+    <p class="lead">Most of the people who reach out here aren't "shopping for HR." They're producers, GMs, company managers, or nonprofit leaders carrying a specific situation that feels heavy.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section-page-bg section-pad">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: Intro -->
+      <div class="contact-intro">
+        <h2>Talk with Raul</h2>
+        <p>You don't have to decide which service you need first. You just have to get the story out of your head and into a conversation.</p>
+        <p>HR Force NY is led by Raul [Last Name], a Broadway League-insider HR leader who has spent years:</p>
+        <ul class="bullet-list raul-bullets">
+          <li>Untangling complex leave and accommodations questions</li>
+          <li>Designing and running investigations in sensitive environments</li>
+          <li>Helping producers, GMs, and company managers make fair, defensible people decisions without stopping the show</li>
+        </ul>
+        <p style="margin-top:1.5rem;">Your first step is a 30-minute call directly with Raul—not a junior associate, not a generic intake team.</p>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy);margin-bottom:0.5rem;">Request a 30-Minute Call</h3>
+        <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1.75rem;">Raul reviews every note personally and will respond within [response time — e.g. one business day].</p>
+
+        <form name="contact" method="POST" netlify>
+          <input type="hidden" name="form-name" value="contact">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="" disabled selected>Select your role</option>
+              <option>Producer / GM</option>
+              <option>Company Manager</option>
+              <option>Nonprofit / Presenter Leader</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Organization / Production</label>
+            <input type="text" id="organization" name="organization" required placeholder="Production or organization name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Which service are you interested in?</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>Select a service</option>
+              <option>Embedded HR Retainers</option>
+              <option>Leave &amp; Accommodations Command Center</option>
+              <option>Investigations &amp; Workplace Concerns</option>
+              <option>HR Advisory for Live Entertainment Orgs</option>
+              <option>Not sure / need guidance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">What would you like to talk about?</label>
+            <textarea id="message" name="message" placeholder="Share a few sentences about what's happening—no names or details you're not comfortable putting in writing. You can fill in the rest live with Raul."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="urgency">How time-sensitive is this?</label>
+            <select id="urgency" name="urgency">
+              <option value="" disabled selected>Select urgency</option>
+              <option>Today / Next 48 hours</option>
+              <option>This week</option>
+              <option>Not urgent</option>
+            </select>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn-gold">Request a call with Raul</button>
+          </div>
+        </form>
+
+        <div class="prefer-email">
+          <h3>Prefer Email?</h3>
+          <p>If you'd rather write directly, email Raul at <strong>[email address]</strong>. Include your role, production or organization, and a short note about what you'd like to discuss. He'll reply personally.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/brand/hrforce-ny-logo-2a.png" alt="HR Force NY" height="52">
+      <p>Embedded HR for Broadway &amp; Live Entertainment</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/services/">Services</a>
+      <a href="/services/embedded-hr-retainers/">Embedded HR Retainers</a>
+      <a href="/services/leave-accommodations/">Leave &amp; Accommodations</a>
+      <a href="/services/investigations/">Investigations</a>
+      <a href="/services/advisory/">HR Advisory</a>
+    </nav>
+    <nav class="footer-nav">
+      <a href="/who-we-serve/">Who We Serve</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; 2026 HR Force NY. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
