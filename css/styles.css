@@ -150,7 +150,7 @@ ul {
 .btn-gold:hover {
   background: #b88e3b;
   border-color: #b88e3b;
-  color: var(--navy);
+  color: var(--page-bg);
 }
 
 .btn-outline {
@@ -280,6 +280,10 @@ ul {
   color: var(--navy);
 }
 
+.main-nav .btn-gold:hover {
+  color: var(--page-bg);
+}
+
 /* Services dropdown */
 .nav-dropdown {
   position: relative;
@@ -308,8 +312,7 @@ ul {
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   background: var(--navy);
   border: 1px solid rgba(201,162,75,0.3);
   border-top: 2px solid var(--gold);
@@ -367,11 +370,11 @@ ul {
 }
 
 .footer-wordmark .logo-monogram {
-  font-size: 2.4rem;
+  font-size: 3.6rem;
 }
 
 .footer-wordmark .logo-name {
-  font-size: 1.25rem;
+  font-size: 1.875rem;
 }
 
 .footer-logo p {
@@ -505,6 +508,104 @@ ul {
    PULLQUOTE
    ============================================================ */
 
+.intro-statement {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--navy);
+  max-width: 700px;
+  text-wrap: balance;
+}
+
+.gold-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 2rem 0;
+}
+
+.intro-body-prose .gold-rule {
+  margin: 0.75rem 0;
+}
+
+.intro-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.intro-body-prose p:not(.intro-statement) {
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--text-mid);
+}
+
+.intro-body-prose p + p {
+  margin-top: 1.1rem;
+}
+
+.intro-body-prose strong {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.minefield-card {
+  background: var(--navy);
+  padding: 2rem 1.75rem;
+}
+
+.card-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.pressure-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pressure-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(244, 241, 234, 0.85);
+}
+
+.pressure-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 0.6em;
+}
+
+.card-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(201, 162, 75, 0.2);
+  margin: 1.5rem 0;
+}
+
+.card-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: rgba(244, 241, 234, 0.6);
+}
+
 .pullquote {
   border-left: 3px solid var(--gold);
   padding: 1.5rem 2rem;
@@ -554,6 +655,7 @@ ul {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: start;
+  margin-top: 1.5rem;
 }
 
 .audience-links {
@@ -575,7 +677,10 @@ ul {
   transition: border-color 0.2s;
 }
 
-.audience-links a:hover { border-color: var(--gold); }
+.audience-links a:hover {
+  color: var(--navy);
+  border-color: var(--navy);
+}
 
 /* ============================================================
    HOW IT WORKS — 3 COLUMN
@@ -651,7 +756,7 @@ ul {
 }
 
 .cta-band p {
-  max-width: 540px;
+  max-width: 680px;
   margin: 0 auto 2rem;
   color: rgba(244, 241, 234, 0.78);
 }
@@ -808,6 +913,109 @@ ul {
 }
 
 /* ============================================================
+   HERO BILLBOARD (homepage — two-column, photo bleeds right edge)
+   ============================================================ */
+
+.hero-billboard {
+  position: relative;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  min-height: 640px;
+  overflow: hidden;
+}
+
+.hero-billboard__photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Gradient: 100% navy on left, linear fade to transparent at ~62% */
+.hero-billboard__photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--navy) 0%, var(--navy) 48%, transparent 82%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-billboard__photo img {
+  position: absolute;
+  height: 155%;
+  width: auto;
+  max-width: none;
+  top: -45%;
+  right: calc(26vw - 607px);
+}
+
+.hero-billboard__text {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem 5rem max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+  max-width: 920px;
+  color: var(--cream);
+}
+
+.hero-billboard__text .eyebrow { color: var(--rose); }
+
+.hero-billboard__text h1 {
+  color: var(--cream);
+  font-size: 2.8rem;
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-billboard__text .subhead {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(244, 241, 234, 0.78);
+  max-width: 500px;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   PHOTO / PORTRAIT TREATMENTS
+   ============================================================ */
+
+/* About leadership bio */
+.leader-bio {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.leader-photo {
+  position: sticky;
+  top: 96px;
+}
+
+.leader-photo img {
+  width: 100%;
+  display: block;
+  border-left: 4px solid var(--gold);
+}
+
+/* Contact portrait */
+.contact-portrait {
+  margin-bottom: 1.5rem;
+}
+
+.contact-portrait img {
+  width: 100%;
+  max-width: 300px;
+  border-left: 3px solid var(--gold);
+}
+
+/* ============================================================
    PAGE HEADER (non-hero interior pages)
    ============================================================ */
 
@@ -844,6 +1052,7 @@ ul {
    RESPONSIVE
    ============================================================ */
 
+
 @media (max-width: 900px) {
   .grid-2,
   .grid-3,
@@ -852,9 +1061,34 @@ ul {
   .included-grid,
   .audience-inner,
   .footer-inner,
-  .contact-layout {
+  .contact-layout,
+  .hero-split,
+  .leader-bio {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .hero-billboard {
+    min-height: auto;
+    align-items: center;
+  }
+
+  .hero-billboard__photo {
+    display: none;
+  }
+
+  .hero-billboard__text {
+    padding: 4rem 2rem;
+    max-width: 100%;
+  }
+
+  .hero-billboard__text h1 {
+    font-size: clamp(1.75rem, 5vw, 2.8rem);
+  }
+
+  .leader-photo {
+    position: static;
+    max-width: 320px;
   }
 
   .footer-inner {
@@ -863,6 +1097,11 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .intro-body-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .main-nav {
     gap: 1rem;
   }
