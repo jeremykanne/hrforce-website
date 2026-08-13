@@ -307,7 +307,7 @@ ul {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--navy);
@@ -316,6 +316,7 @@ ul {
   min-width: 260px;
   z-index: 200;
   padding: 0.5rem 0;
+  padding-top: 0.75rem;
 }
 .nav-dropdown:hover .dropdown-menu,
 .nav-dropdown:focus-within .dropdown-menu {
