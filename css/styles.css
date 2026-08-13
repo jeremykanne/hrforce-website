@@ -362,6 +362,18 @@ ul {
   margin-bottom: 1rem;
 }
 
+.footer-wordmark {
+  margin-bottom: 0.5rem;
+}
+
+.footer-wordmark .logo-monogram {
+  font-size: 2.4rem;
+}
+
+.footer-wordmark .logo-name {
+  font-size: 1.25rem;
+}
+
 .footer-logo p {
   font-family: 'Jost', sans-serif;
   font-size: 0.8rem;
