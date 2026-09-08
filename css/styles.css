@@ -980,6 +980,10 @@ ul {
   margin-bottom: 0;
 }
 
+.hero-billboard__text .subhead + .subhead {
+  margin-top: 1.1rem;
+}
+
 /* ============================================================
    PHOTO / PORTRAIT TREATMENTS
    ============================================================ */
