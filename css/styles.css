@@ -341,6 +341,34 @@ ul {
   color: var(--gold);
 }
 
+/* Mobile menu toggle (shown at 900px and below) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  margin-right: -10px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  display: block;
+  height: 2px;
+  background: var(--cream);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.nav-open .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1084,6 +1112,71 @@ ul {
 
 
 @media (max-width: 900px) {
+  /* Header nav collapses into a dropdown panel */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 2rem 1.75rem;
+    background: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+  }
+
+  .nav-open .main-nav {
+    display: flex;
+  }
+
+  .main-nav > a:not(.btn-gold),
+  .nav-dropdown > a {
+    padding: 1rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1);
+  }
+
+  .nav-dropdown > a::after {
+    display: none;
+  }
+
+  .dropdown-menu,
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+    position: static;
+    min-width: 0;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1);
+    padding: 0.25rem 0 0.5rem 1rem;
+  }
+
+  .dropdown-menu a {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    white-space: normal;
+    color: rgba(244, 241, 234, 0.78);
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover {
+    background: none;
+  }
+
+  .main-nav .btn-gold {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
   .grid-2,
   .grid-3,
   .how-grid,
@@ -1134,14 +1227,6 @@ ul {
   .intro-body-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .main-nav {
-    gap: 1rem;
-  }
-
-  .main-nav a:not(.btn-gold) {
-    display: none;
   }
 
   h1 { font-size: 2.2rem; }
