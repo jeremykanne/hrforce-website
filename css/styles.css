@@ -925,10 +925,17 @@ ul {
   overflow: hidden;
 }
 
+/* Background extends the studio backdrop (sampled from the photo's edges) so the
+   portrait can sit centered in the open space without cropping or a hard edge.
+   The hard stop at ~91.4% is where the tabletop begins. */
 .hero-billboard__photo {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  background: linear-gradient(to bottom,
+    #49606b 0%, #4e6370 10%, #556c7a 20%, #5a7380 30%, #5f7786 40%,
+    #607988 50%, #5c7585 60%, #5b7281 70%, #566e7b 80%, #546a77 91.2%,
+    #232628 91.6%, #1d1e1c 100%);
 }
 
 /* Gradient: 100% navy on left, linear fade to transparent at ~62% */
@@ -941,13 +948,17 @@ ul {
   pointer-events: none;
 }
 
+/* Full-height portrait, Raul centered in the open space right of the text */
 .hero-billboard__photo img {
   position: absolute;
-  height: 155%;
+  top: 0;
+  left: 72.5%;
+  height: 100%;
   width: auto;
   max-width: none;
-  top: -45%;
-  right: calc(26vw - 607px);
+  transform: translateX(-50%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
 .hero-billboard__text {
@@ -1039,6 +1050,21 @@ ul {
   max-width: 680px;
 }
 
+/* About: page header with the homepage hero portrait on the right */
+.page-header--photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.page-header--photo .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
 /* ============================================================
    INLINE LINK STYLE
    ============================================================ */
@@ -1079,6 +1105,10 @@ ul {
 
   .hero-billboard__photo {
     display: none;
+  }
+
+  .page-header--photo {
+    min-height: auto;
   }
 
   .hero-billboard__text {
