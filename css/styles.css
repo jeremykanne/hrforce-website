@@ -1078,12 +1078,12 @@ ul {
   max-width: 680px;
 }
 
-/* About: page header with the homepage hero portrait on the right */
+/* About: page header with the B&W Broadway photo on the right */
 .page-header--photo {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 520px;
+  min-height: 416px;
   overflow: hidden;
 }
 
@@ -1091,6 +1091,23 @@ ul {
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+/* Full-bleed street photo, so no studio backdrop. Sized in px against the fixed
+   416px header; the right offset tracks the viewport so Raul stays ~74% across
+   and the photo always bleeds off the right edge. */
+.page-header--photo .hero-billboard__photo {
+  background: var(--navy);
+}
+
+.page-header--photo .hero-billboard__photo img {
+  top: -234px; /* top of Raul's hair lands 40px below the nav */
+  left: auto;
+  right: min(0px, calc(26vw - 518px));
+  height: 832px;
+  transform: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 15%);
 }
 
 /* ============================================================
