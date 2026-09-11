@@ -1083,7 +1083,7 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 416px;
+  min-height: 468px;
   overflow: hidden;
 }
 
@@ -1094,7 +1094,7 @@ ul {
 }
 
 /* Full-bleed street photo, so no studio backdrop. Sized in px against the fixed
-   416px header; the right offset tracks the viewport so Raul stays ~74% across
+   468px header; the right offset tracks the viewport so Raul stays ~74% across
    and the photo always bleeds off the right edge. */
 .page-header--photo .hero-billboard__photo {
   background: var(--navy);
