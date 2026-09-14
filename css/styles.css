@@ -972,6 +972,18 @@ ul {
   margin: 0;
 }
 
+.prefer-email a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.prefer-email a:hover {
+  color: var(--gold-hover);
+}
+
 /* ============================================================
    HERO BILLBOARD (homepage — two-column, photo bleeds right edge)
    ============================================================ */
